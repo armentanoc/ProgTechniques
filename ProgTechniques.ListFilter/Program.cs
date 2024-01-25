@@ -1,6 +1,5 @@
 ﻿
-
-namespace ProgTechniques.ListOperations
+namespace ProgTechniques.ListFilter
 {
     internal class Program
     {
