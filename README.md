@@ -67,14 +67,19 @@ O `WeatherForecastController` na web API mostra como acessar valores de configur
 Este projeto destaca a utilização do padrão Options no contexto do ASP.NET Core, proporcionando uma maneira eficiente de configurar e acessar opções específicas em uma aplicação. 
 Pode ser expandido para incluir mais configurações conforme necessário para diferentes cenários de aplicação.
 
-## 🔢 WordCounter
+## 🔢 FrequencyCounter
 
 **Descrição:**
-Este projeto implementa um contador de palavras usando um dicionário. O programa recebe um texto como entrada e utiliza um `Dictionary<string, int>` 
-para contar as ocorrências de cada palavra no texto. Não utiliza métodos de extensão LINQ.
+Este projeto implementa um contador de palavras usando um dicionário. O programa recebe um texto ou uma coleção como entrada e utiliza um `Dictionary<T, int>` para contar as ocorrências de cada elemento no input. Não utiliza métodos de extensão LINQ.
 
 **Exemplo de Uso:**
 ```csharp
-var input = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor porta velit a tincidunt. Nam efficitur iaculis placerat. Aenean lectus dui, sollicitudin id rhoncus tristique, aliquet sed quam. Phasellus blandit magna at elementum consequat. Nam vitae nunc vehicula, blandit felis a, placerat augue. Quisque bibendum a ipsum at scelerisque. Duis molestie turpis quis orci vehicula aliquam. Duis non elementum erat. Phasellus et dui odio. Nunc vitae leo sem. Curabitur nec enim id mi aliquet commodo at et sapien. Fusce sit amet nisi elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis vitae dolor at sem ultrices euismod. Morbi aliquet, felis et mattis congue, justo nunc pharetra lectus, a lobortis mauris eros et nulla.";
-Dictionary<string, int> wordCount = CountWords(input);
+string input = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor porta velit a tincidunt. Nam efficitur iaculis placerat. Aenean lectus dui, sollicitudin id rhoncus tristique, aliquet sed quam. Phasellus blandit magna at elementum consequat. Nam vitae nunc vehicula, blandit felis a, placerat augue. Quisque bibendum a ipsum at scelerisque. Duis molestie turpis quis orci vehicula aliquam. Duis non elementum erat. Phasellus et dui odio. Nunc vitae leo sem. Curabitur nec enim id mi aliquet commodo at et sapien. Fusce sit amet nisi elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis vitae dolor at sem ultrices euismod. Morbi aliquet, felis et mattis congue, justo nunc pharetra lectus, a lobortis mauris eros et nulla.";
+//List<int> input = new List<int> { 1, 2, 3, 1, 2, 3, 4, 5 }; //outra opção
+//char[] input = "Hello, World!".ToCharArray(); //outra opção
+
+var cleanedInput = Utils.CleanInput(input);
+var dictInputCount = InputOperations.CountOccurrences(cleanedInput);
+InputOperations.DisplayOccurrences(dictInputCount);
+
 ```
