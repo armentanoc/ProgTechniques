@@ -11,6 +11,8 @@ Ela suporta três tipos de operadores de abertura e fechamento: `()`, `{}` e `[]
 ```csharp
 var expression = "(2+1)*80/(7-[√9 + {4² * 0}])";
 PrintBalanceResult(expression);
+//método de impressão personalizado baseado no bool isBalanced retornado por
+//BracketBalancer.IsExpressionBalanced(expression, out char mismatchedBracket, out int mismatchedBracketPosition);
 ```
 
 ## 🥔 HotPotato
