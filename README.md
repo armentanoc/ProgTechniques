@@ -21,7 +21,7 @@ Um número aleatório entre 1 e 100 determina a quantidade de passes até a bata
 
 **Exemplo de Uso:**
 ```csharp
-int NUMBER_OF_PLAYERS = 10;
+const int NUMBER_OF_PLAYERS = 10;
 HotPotatoGame.Play(NUMBER_OF_PLAYERS);
 ```
 ## 🔍 ListFilter
@@ -32,13 +32,13 @@ Utiliza a estrutura de dados `List<T>`.
 
 **Exemplo de Uso:**
 ```csharp
-MIN_LENGTH = 10;
+const int MIN_LENGTH = 10;
 var input = GenericValues<string>.GenerateList("Idiossincrasia", "Ambivalente", "Quimérica", "Perpendicular", "Efêmero", "Pletora", "Obnubilado", "Xilografia", "Quixote", "Inefável");
 List<string> result = FilterListByMinLength(input, MIN_LENGTH);
 ```
 **Outro Exemplo de Uso:**
 ```csharp
-MIN_LENGTH = 5;
+const int MIN_LENGTH = 5;
 var input = GenericValues<long>.GenerateList(12345678912, 1234567812, 123, 12, 12345678912345, 12345, 124467689790);
 List<string> result = FilterListByMinLength(input, MIN_LENGTH);
 ```
