@@ -21,8 +21,8 @@ Um número aleatório entre 1 e 100 determina a quantidade de passes até a bata
 
 **Exemplo de Uso:**
 ```csharp
-int numberOfPlayers = 10;
-PlayHotPotatoGame(numberOfPlayers);
+int NUMBER_OF_PLAYERS = 10;
+HotPotatoGame.Play(NUMBER_OF_PLAYERS);
 ```
 ## 🔍 ListFilter
 
