@@ -48,7 +48,7 @@ namespace ProgTechniques.ListFilter
 
             foreach (var item in input)
             {
-                if (item.ToString().Length >= minLength)
+                if (item?.ToString()?.Length >= minLength)
                 {
                     output.Add(item);
                 }
