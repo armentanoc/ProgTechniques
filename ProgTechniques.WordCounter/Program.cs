@@ -12,6 +12,9 @@ namespace ProgTechniques.WordCounter
 
             var cleanedInput = Utils.CleanInput(input);
             var dictInputCount = InputOperations.CountOccurrences(cleanedInput);
+
+            // Nota como tivemos que sair do objeto InputOperations com o resultado e voltar para ele para pedir para imprimir?
+            // Isso pode ser interpretado como um sinal de o método DisplayOccurrences não deveria estar lá dentro, mas sim aqui fora (ou em outro objeto)
             InputOperations.DisplayOccurrences(dictInputCount);
 
             Console.ReadLine();

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProgTechniques.BalancedExpressions
+﻿namespace ProgTechniques.BalancedExpressions
 {
     public class BracketBalancer 
     {
+        // Ótima aplicação! Combinar estruturas de dados em lógicas como essas é muito comum
         private static readonly Dictionary<char, char> BracketPairs = new Dictionary<char, char>
         {
             { '(', ')' },
@@ -15,6 +10,11 @@ namespace ProgTechniques.BalancedExpressions
             { '[', ']' }
         };
 
+        // Boa iniciativa retornando detalhes sobre onde um erro foi encontrado!
+        // Quando temos multiplas informações para retornar assim, ao invés do `out` para cada uma das informações (que vai aumentar
+        // o número de parametros necessários para o método) costuma-se usar uma classe POCO ou DTO como tipo de retorno.
+        // Lá tira o resultado (true or false) e todos os demais detalhes, como por exemplo a lista de todos os brackets que 
+        // estão desbalanceados (os de abertura e fechamento)
         public static bool IsExpressionBalanced(string expression, out char mismatchedBracket, out int mismatchedBracketPosition)
         {
             Stack<char> bracketStack = new Stack<char>();
