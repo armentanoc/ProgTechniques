@@ -6,13 +6,18 @@ namespace ProgTechniques.WordCounter
     {
         internal static string[] CleanInput(string input)
         {
-            return ReplacePunctuation(input).Split();
+            return input.WithoutPonctuation().Split();
         }
         internal static IEnumerable<T> CleanInput<T>(IEnumerable<T> input)
         {
             return input;
         }
-        internal static string ReplacePunctuation(string input)
+    }
+
+    public static class Extensions
+    {
+        // Que tal se implementássemos aqui aquele conceito de métodos de extensão?! Veja como ficaria:
+        public static string WithoutPonctuation(this string input)
         {
             StringBuilder result = new StringBuilder();
 

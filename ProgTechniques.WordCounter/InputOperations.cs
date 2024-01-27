@@ -2,9 +2,10 @@
 {
     internal class InputOperations
     {
-        internal static Dictionary<T, int> CountOccurrences<T>(IEnumerable<T> input)
+        // Ótima aplicação de generalização!
+        internal static Dictionary<T, int> CountOccurrences<T>(IEnumerable<T> input) where T : notnull
         {
-            Dictionary<T, int> occurrences = new Dictionary<T, int>();
+            Dictionary<T, int> occurrences = new();
 
             foreach (var element in input)
             {

@@ -7,10 +7,7 @@ namespace ProgTechniques.ListFilter
         {
             const int MIN_LENGTH = 10;
 
-            var input =
-                GenericValues<string>
-                .GenerateList
-                (
+            var input = new[] {
                 "Idiossincrasia",
                 "Ambivalente",
                 "Quimérica",
@@ -21,20 +18,7 @@ namespace ProgTechniques.ListFilter
                 "Xilografia",
                 "Quixote",
                 "Inefável"
-                );
-
-            //var input =
-            //    GenericValues<long>
-            //    .GenerateList
-            //    (
-            //    12345678912,
-            //    1234567812,
-            //    123,
-            //    12,
-            //    12345678912345,
-            //    12345,
-            //    124467689790
-            //    );
+            };
 
             var output = FilterListByMinLength(input, MIN_LENGTH);
             PrintEnumerable(output);
@@ -42,13 +26,22 @@ namespace ProgTechniques.ListFilter
             Console.ReadKey();
         }
 
-        internal static List<T> FilterListByMinLength<T>(List<T> input, int minLength)
+        // Entendi a proposta de generalizar e aplicar o conceito, mas entendo que infelizmente o método 
+        // abaixo não seria um bom candidato para aplica Generics.
+        // Por exemplo:
+        // ```
+        // var item = 15.ToString() // item vai guardar o valor "15"
+        // var result = item.Length >= minLength // result vai guardar o valor false, pois "15".Length == 2
+        // ``` 
+        // Isso causa confusão de interpretação da finalidade do método e pode levar a bugs.
+        // A minha proposta para o método seria:
+        internal static IEnumerable<string> FilterListByMinLength(IEnumerable<string> input, int minLength)
         {
-            var output = new List<T>();
+            var output = new List<string>();
 
             foreach (var item in input)
             {
-                if (item?.ToString()?.Length >= minLength)
+                if (item?.Length >= minLength)
                 {
                     output.Add(item);
                 }
@@ -56,6 +49,18 @@ namespace ProgTechniques.ListFilter
             return output;
         }
 
+        // Já aqui faz um pouco mais de sentido usar generics, pois não há lógica de decisão envolvida e, no pior dos casos,
+        // vai haver uma impressão pouco significativa do objeto, caso o mesmo tenha a implementação padrão do método ToString
+        // como seria o caso do seguinte:
+        // ```
+        // PrintEnumerable(new[] { new int[0], new int[1] });
+        // ```
+        // A saída seria:
+        //
+        // Output:
+           
+        // System.Int32[]
+        // System.Int32[]
         internal static void PrintEnumerable<T>(IEnumerable<T> items)
         {
             Console.WriteLine("Output: \n");

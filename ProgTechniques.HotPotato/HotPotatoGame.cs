@@ -29,6 +29,7 @@ namespace ProgTechniques.HotPotato
 
         static int GetRandomPassesUntilExplode()
         {
+            // Esses limites mínimos e máximos aqui seriam uma ótima oportunidade para combinar com o assunto de Configurações. O que acha? ;p
             return _random.Next(1, 101);
         }
 
