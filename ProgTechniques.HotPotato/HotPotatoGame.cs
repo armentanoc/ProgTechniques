@@ -1,9 +1,12 @@
 ﻿
 namespace ProgTechniques.HotPotato
 {
-    internal class HotPotatoGame
+    public class HotPotatoGame
     {
-        private static Random _random = new Random();
+        public HotPotatoGame()
+        {
+            
+        }
         internal static void Play(int numberOfPlayers)
         {
             Queue<string> playersQueue = InitializePlayersQueue(numberOfPlayers);
@@ -15,7 +18,7 @@ namespace ProgTechniques.HotPotato
             PerformPassesUntilExplode(playersQueue, passesUntilExplode);
         }
 
-        static Queue<string> InitializePlayersQueue(int numberOfPlayers)
+        public static Queue<string> InitializePlayersQueue(int numberOfPlayers) 
         {
             var playersQueue = new Queue<string>();
 
@@ -23,16 +26,17 @@ namespace ProgTechniques.HotPotato
             {
                 playersQueue.Enqueue($"Player {i}");
             }
-
+            
             return playersQueue;
+
         }
 
         static int GetRandomPassesUntilExplode()
         {
-            return _random.Next(1, 101);
+            return 15;
         }
-
-        static void PerformPassesUntilExplode(Queue<string> playersQueue, int passesUntilExplode)
+        
+        public static string PerformPassesUntilExplode(Queue<string> playersQueue, int passesUntilExplode) 
         {
             for (int passesCount = 1; passesCount <= passesUntilExplode; passesCount++)
             {
@@ -43,6 +47,7 @@ namespace ProgTechniques.HotPotato
 
             string eliminatedPlayer = playersQueue.Dequeue();
             Console.WriteLine($"A batata explodiu! {eliminatedPlayer} está fora do jogo.");
+            return eliminatedPlayer;
         }
     }
 }

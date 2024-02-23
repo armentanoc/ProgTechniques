@@ -5,13 +5,15 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgTechniques.OptionsConfigPattern", "ProgTechniques.OptionsConfigPattern\ProgTechniques.OptionsConfigPattern.csproj", "{919FF226-05DE-4AFC-9737-70D8A679A32E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgTechniques.BalancedExpressions", "ProgTechniques.BalancedExpressions\ProgTechniques.BalancedExpressions.csproj", "{FC0FA1C9-9468-44FF-9BBB-50764D30BF66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgTechniques.BalancedExpressions", "ProgTechniques.BalancedExpressions\ProgTechniques.BalancedExpressions.csproj", "{FC0FA1C9-9468-44FF-9BBB-50764D30BF66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgTechniques.HotPotato", "ProgTechniques.HotPotato\ProgTechniques.HotPotato.csproj", "{A2B4AF52-A158-4866-9235-1A449BE47BE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgTechniques.HotPotato", "ProgTechniques.HotPotato\ProgTechniques.HotPotato.csproj", "{A2B4AF52-A158-4866-9235-1A449BE47BE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgTechniques.WordCounter", "ProgTechniques.WordCounter\ProgTechniques.WordCounter.csproj", "{88151137-D835-4C79-90DF-DDBF20B66F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgTechniques.WordCounter", "ProgTechniques.WordCounter\ProgTechniques.WordCounter.csproj", "{88151137-D835-4C79-90DF-DDBF20B66F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgTechniques.ListFilter", "ProgTechniques.ListFilter\ProgTechniques.ListFilter.csproj", "{03FCB339-0383-4125-A6E5-D507567781CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgTechniques.ListFilter", "ProgTechniques.ListFilter\ProgTechniques.ListFilter.csproj", "{03FCB339-0383-4125-A6E5-D507567781CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgTechniques.Tests", "ProgTechniques.Tests\ProgTechniques.Tests.csproj", "{761D8EB9-BC08-4F35-A6B5-7D8910F2860A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{03FCB339-0383-4125-A6E5-D507567781CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03FCB339-0383-4125-A6E5-D507567781CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03FCB339-0383-4125-A6E5-D507567781CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{761D8EB9-BC08-4F35-A6B5-7D8910F2860A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{761D8EB9-BC08-4F35-A6B5-7D8910F2860A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761D8EB9-BC08-4F35-A6B5-7D8910F2860A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{761D8EB9-BC08-4F35-A6B5-7D8910F2860A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
