@@ -3,10 +3,6 @@ namespace ProgTechniques.HotPotato
 {
     public class HotPotatoGame
     {
-        public HotPotatoGame()
-        {
-            
-        }
         internal static void Play(int numberOfPlayers)
         {
             Queue<string> playersQueue = InitializePlayersQueue(numberOfPlayers);
@@ -20,15 +16,16 @@ namespace ProgTechniques.HotPotato
 
         public static Queue<string> InitializePlayersQueue(int numberOfPlayers) 
         {
+            // 3 
             var playersQueue = new Queue<string>();
-
+       
             for (int i = 1; i <= numberOfPlayers; i++)
             {
                 playersQueue.Enqueue($"Player {i}");
             }
             
             return playersQueue;
-
+            // Player 1, Player 2, Player 3
         }
 
         static int GetRandomPassesUntilExplode()
@@ -41,7 +38,8 @@ namespace ProgTechniques.HotPotato
             for (int passesCount = 1; passesCount <= passesUntilExplode; passesCount++)
             {
                 string currentPlayer = playersQueue.Dequeue();
-                Console.WriteLine($"A batata está passando por {currentPlayer} e esse é o passe {passesCount}.");
+                Console.WriteLine($"A batata está passando por {currentPlayer}.");
+                Console.WriteLine($"Esse é o passe {passesCount}.");
                 playersQueue.Enqueue(currentPlayer);
             }
 
